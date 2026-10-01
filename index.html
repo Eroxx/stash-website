@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=12">
 <style>
 /* App Store badge (store.js). Apple: 40px minimum height, clear space a quarter of its height,
    never recolored or altered. */
@@ -95,9 +95,9 @@
     </div>
     <div class="kinds" data-kinds>
       <div class="kind-tabs" role="tablist" aria-label="What Stash keeps">
-        <button type="button" role="tab" id="kt-web" aria-controls="kp-web" aria-selected="true">Web pages</button>
-        <button type="button" role="tab" id="kt-vid" aria-controls="kp-vid" aria-selected="false">Videos</button>
-        <button type="button" role="tab" id="kt-img" aria-controls="kp-img" aria-selected="false">Images</button>
+        <button type="button" role="tab" id="kt-web" aria-controls="kp-web" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span>Web pages</span></button>
+        <button type="button" role="tab" id="kt-vid" aria-controls="kp-vid" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor" stroke="none"/></svg><span>Videos</span></button>
+        <button type="button" role="tab" id="kt-img" aria-controls="kp-img" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.8" fill="currentColor" stroke="none"/><path d="m4 18 5.5-5.5 4 4L16 14l4 4"/></svg><span>Images</span></button>
       </div>
       <figure class="kind-panel" role="tabpanel" id="kp-web" aria-labelledby="kt-web">
         <figcaption>Every page with its site, folder and tags, and on a shopping list, its price.</figcaption>
@@ -128,13 +128,13 @@
   <div class="wrap head-c">
     <div class="label">And so much more</div>
     <h2>A bookmark app that pays attention.</h2>
-    <p>Every link has a life in Stash, and Stash keeps up with it so you don&rsquo;t have to.</p>
+    <p>Here&rsquo;s how something you save moves through Stash. You press three keys; Stash keeps track of the rest.</p>
   </div>
-  <ol class="life wrap" aria-label="The life of a link in Stash">
-    <li class="h-save"><b>Saved</b><span>One key, from anywhere</span></li>
-    <li class="h-queue"><b>Queued</b><span>Next up, reading and watching together</span></li>
-    <li class="h-seen"><b>Seen</b><span>Marked the moment you open it</span></li>
-    <li class="h-archive"><b>Archived</b><span>Done, out of the way, never lost</span></li>
+  <ol class="life wrap" aria-label="How a saved link moves through Stash">
+    <li class="h-save"><em>1</em><b>Save it</b><span>Press <span class="chord" data-chord="save"><kbd>⌃</kbd><kbd>⌘</kbd><kbd>S</kbd></span> on any page or video. It goes into a folder.</span></li>
+    <li class="h-queue"><em>2</em><b>Line it up</b><span>Press <kbd>q</kbd> to add it to your queue: one list of what to read or watch next.</span></li>
+    <li class="h-seen"><em>3</em><b>Read or watch it</b><span>Open it from Stash. It&rsquo;s marked as seen, so you always know what you haven&rsquo;t got to yet.</span></li>
+    <li class="h-archive"><em>4</em><b>Put it away</b><span>Done? Press <kbd>a</kbd> to archive it. It leaves your lists but stays in its folder and in search.</span></li>
   </ol>
 </section>
 
@@ -228,7 +228,7 @@
           <span class="read"><b>#recipe</b> tagged recipe</span>
           <span class="read"><b>unseen</b> not opened yet</span>
         </div>
-        <div class="result"><span class="dot" aria-hidden="true"></span><span><b>A Field Guide to Sourdough Starters</b><small>risenandbaked.com &middot; Cooking &rsaquo; Bread &middot; #recipe</small></span></div>
+        <div class="result"><span class="dot" aria-hidden="true"></span><span><b>Sourdough</b><small>en.wikipedia.org &middot; Cooking &rsaquo; Bread &middot; #recipe</small></span></div>
       </div>
     </div>
   </div>
@@ -264,7 +264,7 @@
       </div>
       <div class="chat" aria-label="An example conversation">
         <p class="msg you">What have I saved about bread that I still haven&rsquo;t opened?</p>
-        <p class="msg ai">Three things in Cooking &rsaquo; Bread: <b>A Field Guide to Sourdough Starters</b>, a 15-minute video, <b>Proofing Bread in a Cold Kitchen</b>, and a picture you clipped, <b>Bread crumb, second attempt</b>.</p>
+        <p class="msg ai">Two things in Cooking &rsaquo; Bread: the Wikipedia article on <b>Sourdough</b>, and a picture you saved, <b>Sourdough, second attempt</b>.</p>
         <p class="msg you">Anything on my shopping list get cheaper?</p>
         <p class="msg ai">Four things. The biggest drop is the <b>Compact Travel Tripod</b>, now $149, down from $199.</p>
       </div>
@@ -336,6 +336,7 @@
     <nav class="foot-links" aria-label="More">
       <a href="privacy.html">Privacy</a>
       <a href="support.html">Support</a>
+      <a href="credits.html">Credits</a>
       <a class="discord" data-discord href="support.html#community"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.5C.6 9.1-.3 13.6.1 18.1a19.9 19.9 0 0 0 6 3l1.3-2.1a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4a12.9 12.9 0 0 1-2.1 1l1.3 2.1a19.8 19.8 0 0 0 6-3c.5-5.2-.8-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg>Discord</a>
     </nav>
   </div>

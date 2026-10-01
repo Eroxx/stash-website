@@ -579,3 +579,31 @@ section.band { isolation: isolate; }
 }
 .see-whole::after { content: " \2197"; }
 .see-whole:hover { background: color-mix(in srgb, var(--hue, var(--accent)) 16%, transparent); }
+
+/* The steps say what YOU do (Eric: "I understand this because I made the app, but a user won't").
+   A number, a verb, one sentence with the key in it. */
+.life li { padding: 18px 18px 18px; }
+.life li em {
+  display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+  font: 700 13.5px/1 "JetBrains Mono", ui-monospace, monospace; font-style: normal;
+  color: var(--paper); background: var(--step); margin-bottom: 10px;
+}
+.life li b { margin-bottom: 4px; }
+.life li span { display: block; color: var(--ink-2); font-size: 15px; line-height: 1.5; }
+.life li kbd { font-size: 11.5px; padding: 3px 5px 2px; }
+
+/* The kind switcher, made to read as three big buttons (Eric: "should be easier to read"). */
+.kind-tabs { gap: 8px; padding: 6px; background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.kind-tabs button {
+  display: inline-flex; align-items: center; gap: 9px;
+  font: 650 17.5px/1 inherit; color: var(--ink); padding: 14px 26px;
+}
+.kind-tabs button svg { width: 20px; height: 20px; flex: 0 0 20px; opacity: .8; }
+.kind-tabs button:hover { background: var(--sand); }
+.kind-tabs button[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); }
+.kind-tabs button[aria-selected="true"] svg { opacity: 1; }
+@media (max-width: 620px) {
+  .kind-tabs { gap: 4px; padding: 4px; }
+  .kind-tabs button { font-size: 15px; padding: 11px 13px; gap: 6px; }
+  .kind-tabs button svg { width: 17px; height: 17px; flex-basis: 17px; }
+}
