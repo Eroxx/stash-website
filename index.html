@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 <style>
 /* App Store badge (store.js). Apple: 40px minimum height, clear space a quarter of its height,
    never recolored or altered. */
@@ -38,11 +38,11 @@
     <nav class="nav" aria-label="Sections">
       <a href="#save">Saving</a>
       <a href="#library">Library</a>
+      <a href="#queue">Queue</a>
       <a href="#seen">Archive</a>
       <a href="#channels">Channels</a>
       <a href="#prices">Prices</a>
       <a href="#keys">Keyboard</a>
-      <a href="#ai">Claude</a>
       <a href="support.html">Support</a>
       <a class="discord" data-discord href="support.html#community"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.5C.6 9.1-.3 13.6.1 18.1a19.9 19.9 0 0 0 6 3l1.3-2.1a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4a12.9 12.9 0 0 1-2.1 1l1.3 2.1a19.8 19.8 0 0 0 6-3c.5-5.2-.8-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg>Discord</a>
     </nav>
@@ -52,7 +52,7 @@
     <div>
       <div class="label">Stash Library &middot; Mac, iPhone &amp; iPad</div>
       <h1>Save it with one key. <em>Stash takes it from there.</em></h1>
-      <p class="lede">The bookmark app for web pages, videos and images. And it notices things: what you&rsquo;ve opened, what you&rsquo;re done with, and what just went on sale.</p>
+      <p class="lede">The bookmark app for web pages, videos and images. And it keeps track: what&rsquo;s next in your queue, what you&rsquo;ve opened, what you&rsquo;re done with, and what just went on sale.</p>
       <div class="pills">
         <span class="pill solid" data-store-soon><span class="dot"></span>Coming to the Mac App Store</span>
         <a class="store-badge" data-store-live hidden href="#" aria-label="Download Stash Library on the App Store"><picture><source srcset="img/app-store-badge-white.svg" media="(prefers-color-scheme: dark)"><img src="img/app-store-badge-black.svg" alt="Download on the App Store" width="132" height="44"></picture></a>
@@ -76,12 +76,12 @@
       <p>A page, a video, a picture, a whole window of tabs. However you found it, there&rsquo;s a quick way in.</p>
     </div>
     <ul class="ways">
-      <li><span class="way-key"><span class="chord" data-chord="save"><kbd>⌃</kbd><kbd>⌘</kbd><kbd>S</kbd></span></span><b>Any web page</b><span>From Safari or Chrome, with the title already filled in. Pick a folder by typing.</span></li>
-      <li><span class="way-key"><span class="chord" data-chord="save"><kbd>⌃</kbd><kbd>⌘</kbd><kbd>S</kbd></span></span><b>Any YouTube video</b><span>The same key on its page. It&rsquo;s saved as a video, and plays inside Stash.</span></li>
-      <li><span class="way-key"><span class="chord" data-chord="snap"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd><kbd>I</kbd></span></span><b>Part of your screen</b><span>Drag a rectangle over anything, in any app, and it&rsquo;s saved as a picture.</span></li>
-      <li><span class="way-key way-word">Drag</span><b>An image file</b><span>Drop it on Stash, or right-click it and choose Send to Stash.</span></li>
-      <li><span class="way-key"><span class="chord"><kbd>⇧</kbd><kbd>S</kbd></span></span><b>Every tab at once</b><span>Keep a whole browser window as a session, or file it all and close it.</span></li>
-      <li><span class="way-key way-word">Share</span><b>From iPhone and iPad</b><span>The share sheet, from Safari, YouTube or any app, straight into a folder.</span></li>
+      <li class="h-web"><span class="way-key"><span class="chord" data-chord="save"><kbd>⌃</kbd><kbd>⌘</kbd><kbd>S</kbd></span></span><b>Any web page</b><span>From Safari or Chrome, with the title already filled in. Pick a folder by typing.</span></li>
+      <li class="h-video"><span class="way-key"><span class="chord" data-chord="save"><kbd>⌃</kbd><kbd>⌘</kbd><kbd>S</kbd></span></span><b>Any YouTube video</b><span>The same key on its page. It&rsquo;s saved as a video, and plays inside Stash.</span></li>
+      <li class="h-image"><span class="way-key"><span class="chord" data-chord="snap"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd><kbd>I</kbd></span></span><b>Part of your screen</b><span>Drag a rectangle over anything, in any app, and it&rsquo;s saved as a picture.</span></li>
+      <li class="h-image2"><span class="way-key way-word">Drag</span><b>An image file</b><span>Drop it on Stash, or right-click it and choose Send to Stash.</span></li>
+      <li class="h-tabs"><span class="way-key"><span class="chord"><kbd>⇧</kbd><kbd>S</kbd></span></span><b>Every tab at once</b><span>Keep a whole browser window as a session, or file it all and close it.</span></li>
+      <li class="h-phone"><span class="way-key way-word">Share</span><b>From iPhone and iPad</b><span>The share sheet, from Safari, YouTube or any app, straight into a folder.</span></li>
     </ul>
   </div>
 </section>
@@ -104,7 +104,7 @@
         <div class="shot"><picture><source srcset="img/mac-web-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-web.webp" width="2360" height="1616" alt="The Web tab in Stash: saved pages with their site, folder, tags and, for shopping items, the price and whether it dropped"></picture></div>
       </figure>
       <figure class="kind-panel" role="tabpanel" id="kp-vid" aria-labelledby="kt-vid">
-        <figcaption>Videos play right inside Stash, from a queue that remembers where you stopped, to the second.</figcaption>
+        <figcaption>Videos play right inside Stash, and pick up where you stopped, to the second.</figcaption>
         <div class="shot"><picture><source srcset="img/mac-videos-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-videos.webp" width="2360" height="1856" alt="The play queue in Stash: four videos in order with their lengths and how far you got"></picture></div>
       </figure>
       <figure class="kind-panel" role="tabpanel" id="kp-img" aria-labelledby="kt-img">
@@ -128,20 +128,46 @@
   <div class="wrap head-c">
     <div class="label">And so much more</div>
     <h2>A bookmark app that pays attention.</h2>
+    <p>Every link has a life in Stash, and Stash keeps up with it so you don&rsquo;t have to.</p>
   </div>
+  <ol class="life wrap" aria-label="The life of a link in Stash">
+    <li class="h-save"><b>Saved</b><span>One key, from anywhere</span></li>
+    <li class="h-queue"><b>Queued</b><span>Next up, reading and watching together</span></li>
+    <li class="h-seen"><b>Seen</b><span>Marked the moment you open it</span></li>
+    <li class="h-archive"><b>Archived</b><span>Done, out of the way, never lost</span></li>
+  </ol>
 </section>
 
 
-<section class="band" id="seen">
+<section class="band" id="queue" data-hue="queue">
   <div class="wrap">
     <div class="row">
       <div class="copy">
-        <div class="label">Seen and archived</div>
-        <h2>It knows what you&rsquo;ve opened, and what you&rsquo;re done with.</h2>
-        <p>Open a link from Stash and it&rsquo;s marked seen, with no button to press. Finished with it? Press <kbd>a</kbd>: it folds away under <b>Archived</b>, still in its folder, still in every search.</p>
+        <div class="label">The queue</div>
+        <h2>One queue for everything you meant to get to.</h2>
+        <p>Press <kbd>q</kbd> on anything, an article or a video, and it joins one shortlist in the order you choose. Videos play right inside Stash and pick up where you stopped; pages open in your browser.</p>
         <ul class="facts">
-          <li>It keeps count, so the things you saved and never opened are one view away</li>
-          <li>Your lists show what&rsquo;s left to do; your library keeps everything</li>
+          <li><kbd>⌥</kbd><kbd>↑</kbd> <kbd>⌥</kbd><kbd>↓</kbd> to reorder, <kbd>1</kbd> to jump to it from anywhere in Stash</li>
+          <li>The Videos and Web tabs narrow it to just watching or just reading</li>
+          <li>Play and pause from any app, without switching to Stash</li>
+        </ul>
+      </div>
+      <div class="shot"><picture><source srcset="img/mac-videos-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-videos.webp" width="2360" height="1856" alt="The Queue in Stash: articles and videos together in one numbered list, each with buttons to move it up or down" loading="lazy"></picture></div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="seen" data-hue="archive">
+  <div class="wrap">
+    <div class="row flip">
+      <div class="copy">
+        <div class="label">Seen and archived</div>
+        <h2>Finished with it? Archive it, don&rsquo;t lose it.</h2>
+        <p>Press <kbd>a</kbd> and a link folds away under <b>Archived</b>. It stays in its folder and every search still finds it, so your lists show what&rsquo;s left and your library keeps everything.</p>
+        <ul class="facts">
+          <li>Opened links are marked seen by themselves. No button to press</li>
+          <li>It keeps count, so what you saved and never opened is one view away</li>
+          <li>Archive a whole selection at once, or a new video straight from triage</li>
         </ul>
       </div>
       <div class="shot"><picture><source srcset="img/mac-archive-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-archive.webp" width="2360" height="1336" alt="A Read Later folder in Stash: one unread link at the top, and three finished ones dimmed and folded under Archived" loading="lazy"></picture></div>
@@ -149,9 +175,9 @@
   </div>
 </section>
 
-<section class="band alt" id="channels">
+<section class="band" id="channels" data-hue="channels">
   <div class="wrap">
-    <div class="row flip">
+    <div class="row">
       <div class="copy">
         <div class="label">Channels you follow</div>
         <h2>New videos ask first.</h2>
@@ -167,9 +193,9 @@
   </div>
 </section>
 
-<section class="band" id="prices">
+<section class="band alt" id="prices" data-hue="prices">
   <div class="wrap">
-    <div class="row">
+    <div class="row flip">
       <div class="copy">
         <div class="label">Shopping lists</div>
         <h2>It tells you when the price drops.</h2>
@@ -183,9 +209,9 @@
   </div>
 </section>
 
-<section class="band alt" id="search">
+<section class="band" id="search" data-hue="search">
   <div class="wrap">
-    <div class="row flip">
+    <div class="row">
       <div class="copy">
         <div class="label">One search box</div>
         <h2>Search the way you think.</h2>
@@ -208,9 +234,9 @@
   </div>
 </section>
 
-<section class="band" id="own">
+<section class="band alt" id="own" data-hue="own">
   <div class="wrap">
-    <div class="row">
+    <div class="row flip">
       <div class="copy">
         <div class="label">Filing that does itself</div>
         <h2>It knows what you already own.</h2>
@@ -224,9 +250,9 @@
   </div>
 </section>
 
-<section class="band alt" id="ai">
+<section class="band" id="ai" data-hue="ai">
   <div class="wrap">
-    <div class="row flip">
+    <div class="row">
       <div class="copy">
         <div class="label">Works with Claude</div>
         <h2>Ask your AI what&rsquo;s in your Stash.</h2>
@@ -246,7 +272,7 @@
   </div>
 </section>
 
-<section class="band" id="keys">
+<section class="band alt" id="keys" data-hue="keys">
   <div class="wrap">
     <div class="row">
       <div class="copy">
@@ -267,7 +293,7 @@
   </div>
 </section>
 
-<section class="band alt" id="phone">
+<section class="band" id="phone" data-hue="phone">
   <div class="wrap">
     <div class="row">
       <div class="copy">
