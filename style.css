@@ -401,3 +401,78 @@ img.brand-mark { width: 28px; height: 28px; border-radius: 7px; display: block; 
 .foot-links .discord svg { width: 15px; height: 15px; }
 
 .discord.inline svg { width: 15px; height: 15px; vertical-align: -2px; margin-right: 4px; }
+
+/* --- 2026-10-01 rework: one library, three kinds -------------------------------------------------
+   The page leads with the plain claim, a complete bookmark app for pages, videos and images, shown
+   rather than described: one big screenshot per kind behind three tabs, then the basics as a strip.
+   Everything after "And so much more" is what a bookmark app does not usually do. */
+.head-c { text-align: center; max-width: 720px; margin: 0 auto 40px; }
+.head-c p { color: var(--ink-2); font-size: 18.5px; margin: 0; }
+
+.kind-tabs {
+  display: flex; justify-content: center; gap: 6px; margin: 0 auto 28px;
+  padding: 5px; width: max-content; max-width: 100%;
+  background: var(--sand); border-radius: 999px;
+}
+.kind-tabs button {
+  font: 600 15.5px/1 inherit; color: var(--ink-2); background: transparent; border: 0;
+  padding: 11px 20px; border-radius: 999px; cursor: pointer;
+}
+.kind-tabs button:hover { color: var(--ink); }
+.kind-tabs button[aria-selected="true"] { background: var(--paper); color: var(--ink); box-shadow: var(--shadow); }
+.kind-panel { margin: 0; }
+.kind-panel figcaption { text-align: center; color: var(--ink-2); font-size: 17px; margin: 0 auto 22px; max-width: 60ch; }
+.kind-panel .shot { max-width: 1000px; margin: 0 auto; }
+/* Without the script every panel shows, stacked: nothing is hidden from a reader who cannot run it. */
+.kinds.js .kind-tabs { display: flex; }
+.kinds:not(.js) .kind-tabs { display: none; }
+.kinds:not(.js) .kind-panel + .kind-panel { margin-top: 56px; }
+.kinds.js .kind-panel[hidden] { display: none; }
+
+.basics {
+  list-style: none; padding: 0; margin: 44px auto 0; max-width: 980px;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+}
+.basics li {
+  padding: 9px 15px; border-radius: 999px; font-size: 15px; color: var(--ink-2);
+  background: var(--paper-2); border: 1px solid var(--line);
+}
+
+/* The hinge of the page: everything below is what a bookmark app does not usually do. */
+.more-head { padding: 88px 0 8px; border-top: 1px solid var(--line); background: var(--paper-2); }
+.more-head .head-c { margin-bottom: 0; }
+.more-head h2 { font-size: clamp(32px, 4.2vw, 52px); }
+.more-head + section.band { border-top: 0; }
+.more-head + section.band:not(.alt) { background: var(--paper-2); }
+
+/* Save sheet + two phones in one row, the sheet a touch smaller, as it is on screen. */
+.shot.trio { display: flex; gap: 20px; align-items: flex-end; justify-content: center; }
+.shot.trio picture { flex: 0 1 31%; max-width: 230px; }
+.shot.trio picture:first-child { flex-basis: 28%; }
+
+@media (max-width: 620px) {
+  .kind-tabs button { padding: 10px 14px; font-size: 14.5px; }
+  .shot.trio { gap: 10px; }
+  /* Seven pills stacked one per line on a phone read as seven buttons; a tight list reads as what it is. */
+  .basics { display: block; max-width: 30em; margin-top: 32px; }
+  .basics li { background: none; border: 0; border-radius: 0; padding: 7px 0 7px 22px; position: relative; font-size: 15.5px; }
+  .basics li::before { content: "\2713"; position: absolute; left: 0; top: 7px; color: var(--accent); font-weight: 700; }
+}
+
+/* --- saving is the easy part: every way in, one tile each ------------------------------------------ */
+.ways { list-style: none; padding: 0; margin: 0 auto; max-width: 1040px;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.ways li {
+  display: flex; flex-direction: column; gap: 6px; padding: 22px 22px 20px;
+  border-radius: var(--radius); background: var(--paper-2); border: 1px solid var(--line);
+}
+.ways b { font-size: 17.5px; letter-spacing: -.01em; }
+.ways li > span:last-child { color: var(--muted); font-size: 15.5px; line-height: 1.5; }
+.way-key { margin-bottom: 8px; min-height: 30px; display: flex; align-items: center; }
+.way-key kbd { font-size: 14px; padding: 6px 8px 5px; }
+.way-word {
+  font: 600 13px/1 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft); border-radius: 7px; padding: 8px 10px; align-self: flex-start;
+}
+@media (max-width: 960px) { .ways { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .ways { grid-template-columns: minmax(0, 1fr); } .ways li { padding: 18px; } }

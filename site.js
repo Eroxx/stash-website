@@ -88,3 +88,35 @@ var SUPPORT_EMAIL = "support@stashlibraryapp.com";
     else if (e.key === "ArrowLeft") { e.preventDefault(); show(at - 1); }
   });
 })();
+
+/* Web pages / Videos / Images: one screenshot at a time. Without this script all three panels
+   stay visible, stacked, so nothing depends on it. Arrow keys move between the tabs, as in any
+   tab list, and Home / End jump to the ends. */
+(function () {
+  var root = document.querySelector("[data-kinds]");
+  if (!root) return;
+  var tabs = [].slice.call(root.querySelectorAll('[role="tab"]'));
+  var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute("aria-controls")); });
+  function pick(i, focus) {
+    tabs.forEach(function (t, j) {
+      var on = j === i;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      panels[j].hidden = !on;
+    });
+    if (focus) tabs[i].focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { pick(i, false); });
+    t.addEventListener("keydown", function (e) {
+      var n = tabs.length, to = null;
+      if (e.key === "ArrowRight") to = (i + 1) % n;
+      else if (e.key === "ArrowLeft") to = (i - 1 + n) % n;
+      else if (e.key === "Home") to = 0;
+      else if (e.key === "End") to = n - 1;
+      if (to !== null) { e.preventDefault(); pick(to, true); }
+    });
+  });
+  root.classList.add("js");
+  pick(0, false);
+})();
