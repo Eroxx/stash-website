@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="style.css?v=16">
 <style>
 /* App Store badge (store.js). Apple: 40px minimum height, clear space a quarter of its height,
    never recolored or altered. */
@@ -128,13 +128,17 @@
   <div class="wrap head-c">
     <div class="label">And so much more</div>
     <h2>A bookmark app that pays attention.</h2>
-    <p>Here&rsquo;s how something you save moves through Stash. You press three keys; Stash keeps track of the rest.</p>
+    <p>Most bookmarks get saved and forgotten. In Stash, everything you save moves along until you&rsquo;re done with it. Here&rsquo;s one page on its way through.</p>
   </div>
-  <ol class="life wrap" aria-label="How a saved link moves through Stash">
-    <li class="h-save"><em>1</em><b>Save it</b><span>Press <span class="chord" data-chord="save"><kbd>⌃</kbd><kbd>⌘</kbd><kbd>S</kbd></span> on any page or video. It goes into a folder.</span></li>
-    <li class="h-queue"><em>2</em><b>Line it up</b><span>Press <kbd>q</kbd> to add it to your queue: one list of what to read or watch next.</span></li>
-    <li class="h-seen"><em>3</em><b>Read or watch it</b><span>Open it from Stash. It&rsquo;s marked as seen, so you always know what you haven&rsquo;t got to yet.</span></li>
-    <li class="h-archive"><em>4</em><b>Put it away</b><span>Done? Press <kbd>a</kbd> to archive it. It leaves your lists but stays in its folder and in search.</span></li>
+  <ol class="life wrap" aria-label="One saved page on its way through Stash">
+    <li class="h-save"><em>1</em><b>Save it</b><span>Found something worth keeping? Save it in a moment and pick a folder.</span>
+      <div class="mini-card " aria-hidden="true"><i class="mc-dot" aria-hidden="true"></i><img src="img/fav-wikivoyage.png" width="20" height="20" alt=""><div><b>Kyoto travel guide</b><small>en.wikivoyage.org</small><div class="mc-chips"><span class="mc-folder">⛩️ Travel › Japan</span></div></div></div></li>
+    <li class="h-queue"><em>2</em><b>Line it up</b><span>Add it to your queue: a short list of what you&rsquo;ll read or watch next.</span>
+      <div class="mini-card " aria-hidden="true"><i class="mc-dot" aria-hidden="true"></i><img src="img/fav-wikivoyage.png" width="20" height="20" alt=""><div><b>Kyoto travel guide</b><small>en.wikivoyage.org</small><div class="mc-chips"><span class="mc-folder">⛩️ Travel › Japan</span><span class="mc-pill q">In queue · #2</span></div></div></div></li>
+    <li class="h-seen"><em>3</em><b>Open it</b><span>Stash notices you&rsquo;ve read it. The blue &ldquo;new&rdquo; dot goes, so what you haven&rsquo;t opened stands out.</span>
+      <div class="mini-card " aria-hidden="true"><i class="mc-dot off" aria-hidden="true"></i><img src="img/fav-wikivoyage.png" width="20" height="20" alt=""><div><b>Kyoto travel guide</b><small>en.wikivoyage.org</small><div class="mc-chips"><span class="mc-folder">⛩️ Travel › Japan</span><span class="mc-pill">Seen</span></div></div></div></li>
+    <li class="h-archive"><em>4</em><b>Put it away</b><span>Finished? Archive it. It&rsquo;s out of your way, but never deleted: search still finds it.</span>
+      <div class="mini-card arch" aria-hidden="true"><i class="mc-dot off" aria-hidden="true"></i><img src="img/fav-wikivoyage.png" width="20" height="20" alt=""><div><b>Kyoto travel guide</b><small>en.wikivoyage.org</small><div class="mc-chips"><span class="mc-folder">⛩️ Travel › Japan</span><span class="mc-pill">Archived</span></div></div></div></li>
   </ol>
 </section>
 
@@ -144,15 +148,16 @@
     <div class="row">
       <div class="copy">
         <div class="label">The queue</div>
-        <h2>One queue for everything you meant to get to.</h2>
-        <p>Press <kbd>q</kbd> on anything, an article or a video, and it joins one shortlist in the order you choose. Videos play right inside Stash and pick up where you stopped; pages open in your browser.</p>
+        <h2>One queue for everything you want to get to next.</h2>
+        <p>Articles and videos wait together in one list, in the order you choose, and it&rsquo;s easy to change your mind. Add anything with one key, move it up or down with a click, or take it off again. Taking it off the queue never deletes it from your library.</p>
         <ul class="facts">
-          <li><kbd>⌥</kbd><kbd>↑</kbd> <kbd>⌥</kbd><kbd>↓</kbd> to reorder, <kbd>1</kbd> to jump to it from anywhere in Stash</li>
+          <li>Every item has its own <b>↑</b> <b>↓</b> and <b>✕</b> buttons, or use <kbd>⌥</kbd><kbd>↑</kbd> <kbd>⌥</kbd><kbd>↓</kbd> to reorder from the keyboard</li>
+          <li>Clear the whole queue in one go when you want a fresh start</li>
+          <li>Videos play right inside Stash and pick up where you stopped; pages open in your browser</li>
           <li>The Videos and Web tabs narrow it to just watching or just reading</li>
-          <li>Play and pause from any app, without switching to Stash</li>
         </ul>
       </div>
-      <div class="shot zoom"><picture><source srcset="img/mac-videos-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-videos-zoom.webp" width="1310" height="940" alt="The Queue in Stash: articles and videos together in one numbered list, each with buttons to move it up or down" loading="lazy" data-full="img/mac-videos.webp" data-full-dark="img/mac-videos-dark.webp"></picture></div>
+      <div class="shot zoom"><picture><source srcset="img/mac-videos-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-videos-zoom.webp" width="1890" height="940" alt="The Queue in Stash: articles and videos together in one numbered list, each with its own buttons to move it up, move it down or take it off" loading="lazy" data-full="img/mac-videos.webp" data-full-dark="img/mac-videos-dark.webp"></picture></div>
     </div>
   </div>
 </section>
@@ -180,10 +185,10 @@
     <div class="row">
       <div class="copy">
         <div class="label">Channels you follow</div>
-        <h2>New videos ask first.</h2>
-        <p>Follow a YouTube channel and its new uploads wait in <b>Videos to Triage</b> for a decision, one key each, instead of piling up in a feed.</p>
+        <h2>Keep up with your favorite channels, without the endless feed.</h2>
+        <p>Follow a YouTube channel and its new videos come to you in one short list, <b>Videos to Triage</b>. Go through it when you like and decide on each one: watch it, file it, or skip it. Nothing piles up, and there&rsquo;s no feed to scroll.</p>
         <ul class="facts">
-          <li><kbd>q</kbd> queue it, <kbd>m</kbd> file it, <kbd>t</kbd> tag it, <kbd>a</kbd> keep it archived, <kbd>d</kbd> skip it</li>
+          <li>One key each: <kbd>q</kbd> queue it, <kbd>m</kbd> file it, <kbd>t</kbd> tag it, <kbd>a</kbd> keep it archived, <kbd>d</kbd> skip it</li>
           <li>Give a channel a folder and what you keep files itself</li>
           <li>Parts of a series (Part 3, Lesson 7) stay together, in order</li>
         </ul>
@@ -197,11 +202,13 @@
   <div class="wrap">
     <div class="row flip">
       <div class="copy">
-        <div class="label">Shopping lists</div>
-        <h2>It tells you when the price drops.</h2>
-        <p>Mark a folder as a shopping list and Stash checks the prices for you, shows the old price beside the new one, and counts down the days before a deal ends.</p>
+        <div class="label">Shopping lists, if you want them</div>
+        <h2>Saving up for something? It watches the price.</h2>
+        <p>Stash is a bookmark app first, so this stays out of the way until you ask for it. Call a folder <b>Shopping</b>, or switch on <b>Shopping list</b> from any folder&rsquo;s menu, and the links in it get prices. Stash checks them again about once a week and shows the old price beside the new one when something gets cheaper.</p>
         <ul class="facts">
+          <li>Deals with a deadline count down. Stash reads the end date off the store&rsquo;s page when the store lists one, as bundle stores usually do, and you can type a date in when it doesn&rsquo;t. &ldquo;Ends in 3 days&rdquo; stands out as it gets close</li>
           <li>Must have, Want and Someday, each with a running total</li>
+          <li>No shopping folder, no prices: you&rsquo;ll never see any of it</li>
         </ul>
       </div>
       <div class="shot zoom"><picture><source srcset="img/mac-shopping-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-shopping-zoom.webp" width="1190" height="810" alt="A shopping list in Stash: prices, drops shown beside the old price, and a countdown on deals that end" loading="lazy" data-full="img/mac-shopping.webp" data-full-dark="img/mac-shopping-dark.webp"></picture></div>
@@ -218,7 +225,9 @@
         <p>Words, tags, sites, folders, how long a video runs, and whether you&rsquo;ve opened it yet. <span class="chord" data-chord="search"><kbd>⌃</kbd><kbd>⌘</kbd><kbd>F</kbd></span> from any app.</p>
         <ul class="facts">
           <li><code>#tag</code> <code>site:</code> <code>folder:</code> <code>dur:&lt;10</code> <code>unseen</code> <code>archived</code> <code>broken</code></li>
-          <li>Keep any search as a smart collection that stays up to date</li>
+          <li>Save any search as a <b>smart collection</b>. It sits in the sidebar with its count and fills itself as you save: &ldquo;bread recipes I haven&rsquo;t opened&rdquo; or &ldquo;videos under ten minutes&rdquo;, always one click away</li>
+          <li>Or build one from rules, no search syntax needed: folder, tag, words in the title or address, channel, length, when you saved it, how often you&rsquo;ve opened it, seen or watched</li>
+          <li>In the Videos or Web tab, a collection shows just its videos or just its pages</li>
         </ul>
       </div>
       <div class="searchmock" aria-label="An example search">
@@ -254,9 +263,9 @@
   <div class="wrap">
     <div class="row">
       <div class="copy">
-        <div class="label">Works with Claude</div>
+        <div class="label">Works with your AI app</div>
         <h2>Ask your AI what&rsquo;s in your Stash.</h2>
-        <p>Turn on one switch and Claude, or any app that speaks MCP, can search your library, see your queue and check your shopping list.</p>
+        <p>Turn on one switch and your AI app can search your library, see your queue and check your shopping list. Stash speaks MCP, the open standard for connecting AI apps to your own tools, so it works with Claude, Cursor, VS Code and other apps on your Mac that support it. Settings sets up Claude in one click.</p>
         <ul class="facts">
           <li>Saving and filing only if you allow it. Nothing can ever be deleted</li>
           <li>Off until you turn it on, and only for apps on this Mac you give the key to</li>

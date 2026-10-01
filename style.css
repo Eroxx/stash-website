@@ -607,3 +607,45 @@ section.band { isolation: isolate; }
   .kind-tabs button { font-size: 15px; padding: 11px 13px; gap: 6px; }
   .kind-tabs button svg { width: 17px; height: 17px; flex-basis: 17px; }
 }
+
+/* The same page drawn as a small Stash card under each step, changing as it goes: a folder, then
+   a queue badge, then the blue "new" dot gone, then dimmed and archived. A newcomer sees what each
+   word means instead of decoding it (Eric: "still not very clear for someone who has never seen
+   the app"). Drawn in HTML so it is crisp at any size and in both themes. */
+.life li { display: flex; flex-direction: column; }
+.life li > span { flex: 1; }
+.mini-card {
+  margin-top: 14px; display: flex; align-items: flex-start; gap: 9px; position: relative;
+  padding: 11px 12px 11px 22px; border-radius: 11px; background: var(--paper);
+  border: 1px solid color-mix(in srgb, var(--step) 28%, var(--line)); box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.mini-card img { width: 20px; height: 20px; border-radius: 5px; flex: 0 0 20px; margin-top: 1px; }
+.mini-card b { display: block; font-size: 14px; color: var(--ink); letter-spacing: 0; }
+.mini-card small { display: block; color: var(--muted); font-size: 12px; line-height: 1.3; }
+.mc-dot { position: absolute; left: 8px; top: 17px; width: 7px; height: 7px; border-radius: 50%; background: #2b59de; }
+.mc-dot.off { display: none; }
+.mc-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.mc-folder { font-size: 11.5px; font-weight: 600; color: var(--ink-2); }
+.mc-pill { font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.mc-pill.q { color: var(--h-queue); border-color: color-mix(in srgb, var(--h-queue) 40%, transparent); background: color-mix(in srgb, var(--h-queue) 10%, transparent); }
+.mini-card.arch { opacity: .6; }
+.life .mini-card b { font-size: 14px; color: var(--ink); letter-spacing: 0; margin: 0; line-height: 1.3; }
+.life .mini-card small { font-size: 12px; }
+.life .mini-card.arch b { color: var(--muted); }
+/* Phones: one column, the story read top to bottom, each step's card beside its words. */
+@media (max-width: 760px) {
+  .life { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .life li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 14px; align-items: start; }
+  .life li > em, .life li > b, .life li > span { grid-column: 1; }
+  .life li > .mini-card { grid-column: 2; grid-row: 1 / span 3; margin-top: 0; align-self: center; }
+  .life li::after, .life li:nth-child(2)::after { display: block; content: "\2193"; right: auto; left: 50%; top: auto; bottom: -19px; transform: translateX(-50%); }
+  .life li:last-child::after { display: none; }
+  .life .mini-card b { font-size: 13px; }
+  .life .mini-card small, .mc-folder { font-size: 11px; }
+}
+@media (max-width: 760px) {
+  .life li:not(:last-child)::after {
+    content: "\2193"; display: block; right: auto; left: 50%; top: auto; bottom: -20px;
+    transform: translateX(-50%); width: auto;
+  }
+}
