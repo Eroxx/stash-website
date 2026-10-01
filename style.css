@@ -390,3 +390,14 @@ footer { border-top: 1px solid var(--line); padding: 32px 0 56px; color: var(--m
 /* The save sheet is a narrow panel; shown at its own size rather than blown up to fill the column. */
 .shot.sheet { display: flex; justify-content: center; }
 .shot.sheet picture { width: min(100%, 360px); }
+
+/* The brand mark is the app's real icon (img/icon.png), rounded the way iOS rounds it. */
+img.brand-mark { width: 28px; height: 28px; border-radius: 7px; display: block; flex: 0 0 28px; background: none; }
+
+/* Every Discord button carries Discord's own mark in Discord's own blurple (Eric, 2026-09-28).
+   The words stay in the page's colours; only the mark is Discord's. */
+.discord svg { color: #5865F2; }
+.foot-links .discord { display: inline-flex; align-items: center; gap: 6px; }
+.foot-links .discord svg { width: 15px; height: 15px; }
+
+.discord.inline svg { width: 15px; height: 15px; vertical-align: -2px; margin-right: 4px; }

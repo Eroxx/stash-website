@@ -1,6 +1,6 @@
 // One place for the Discord invite. Paste the link between the quotes and every Discord button on
 // every page uses it; until then they lead to the Support page's community section.
-var DISCORD = "";
+var DISCORD = "https://discord.gg/Sv66Tua6hX";
 
 (function () {
   if (DISCORD) {
@@ -11,7 +11,7 @@ var DISCORD = "";
 })();
 
 // Support email: fill this in once support@<domain> forwards, and it appears on the Support page.
-var SUPPORT_EMAIL = "";
+var SUPPORT_EMAIL = "support@stashlibraryapp.com";
 (function () {
   var row = document.querySelector("[data-email]");
   if (!row || !SUPPORT_EMAIL) return;
