@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
-<link rel="stylesheet" href="style.css?v=16">
+<link rel="stylesheet" href="style.css?v=17">
 <style>
 /* App Store badge (store.js). Apple: 40px minimum height, clear space a quarter of its height,
    never recolored or altered. */
@@ -108,7 +108,7 @@
         <div class="shot"><picture><source srcset="img/mac-vidtab-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-vidtab.webp" width="2360" height="1616" alt="The Videos tab in Stash: every saved video with its thumbnail, length and how far you got, and nothing that is not a video"></picture></div>
       </figure>
       <figure class="kind-panel" role="tabpanel" id="kp-img" aria-labelledby="kt-img">
-        <figcaption>Pictures and screen clips as a contact sheet. Drag a rectangle anywhere on screen to save one.</figcaption>
+        <figcaption>Pictures and screen clips as a contact sheet, in the same folders and tags as everything else.</figcaption>
         <div class="shot"><picture><source srcset="img/mac-images-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-images.webp" width="2360" height="1616" alt="The Images tab in Stash: a contact sheet of saved pictures, each with its folder"></picture></div>
       </figure>
     </div>
@@ -153,7 +153,7 @@
         <ul class="facts">
           <li>Every item has its own <b>↑</b> <b>↓</b> and <b>✕</b> buttons, or use <kbd>⌥</kbd><kbd>↑</kbd> <kbd>⌥</kbd><kbd>↓</kbd> to reorder from the keyboard</li>
           <li>Clear the whole queue in one go when you want a fresh start</li>
-          <li>Videos play right inside Stash and pick up where you stopped; pages open in your browser</li>
+          <li>Videos play right inside Stash; pages open in your browser</li>
           <li>The Videos and Web tabs narrow it to just watching or just reading</li>
         </ul>
       </div>
@@ -185,15 +185,16 @@
     <div class="row">
       <div class="copy">
         <div class="label">Channels you follow</div>
-        <h2>Keep up with your favorite channels, without the endless feed.</h2>
-        <p>Follow a YouTube channel and its new videos come to you in one short list, <b>Videos to Triage</b>. Go through it when you like and decide on each one: watch it, file it, or skip it. Nothing piles up, and there&rsquo;s no feed to scroll.</p>
+        <h2>Your YouTube channels, as a to-do list instead of a feed.</h2>
+        <p>Follow a channel by pasting its address, or straight from one of its videos. From then on its new uploads collect in one list, <b>Videos to Triage</b>, with a count beside each channel in the sidebar. Go through it whenever you like and decide on each video, or on the whole lot at once. When the list is empty, you&rsquo;re caught up.</p>
         <ul class="facts">
-          <li>One key each: <kbd>q</kbd> queue it, <kbd>m</kbd> file it, <kbd>t</kbd> tag it, <kbd>a</kbd> keep it archived, <kbd>d</kbd> skip it</li>
-          <li>Give a channel a folder and what you keep files itself</li>
-          <li>Parts of a series (Part 3, Lesson 7) stay together, in order</li>
+          <li>Keep a video and it&rsquo;s saved to that channel&rsquo;s folder, or put straight into your queue</li>
+          <li>One key per decision: <kbd>q</kbd> queue, <kbd>m</kbd> file, <kbd>t</kbd> tag, <kbd>a</kbd> archive, <kbd>d</kbd> skip. Or Save all and Skip all</li>
+          <li>Saved parts of a series (Part 3, Lesson 7) stay together, in order</li>
+          <li>Uses a free YouTube key that you set up once. <a href="support.html#youtube-key">Here&rsquo;s how</a></li>
         </ul>
       </div>
-      <div class="shot zoom"><picture><source srcset="img/mac-triage-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-triage-zoom.webp" width="1050" height="770" alt="Videos to Triage in Stash: six new uploads from two followed channels, each showing the folder it will file into" loading="lazy" data-full="img/mac-triage.webp" data-full-dark="img/mac-triage-dark.webp"></picture></div>
+      <div class="shot zoom fade-right"><picture><source srcset="img/mac-triage-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-triage-zoom.webp" width="1420" height="1170" alt="Videos to Triage in Stash: the sidebar lists the two followed channels, each with 3 new videos, and the list beside it shows the new uploads waiting to be kept or skipped" loading="lazy" data-full="img/mac-triage.webp" data-full-dark="img/mac-triage-dark.webp"></picture></div>
     </div>
   </div>
 </section>
@@ -249,12 +250,14 @@
       <div class="copy">
         <div class="label">Filing that does itself</div>
         <h2>It knows what you already own.</h2>
-        <p>Point Stash at a folder of notes about your own things, and every new link about one of them is tagged with it the moment it arrives.</p>
+        <p>Keep a folder of notes, one for each thing you own: your camera, your Dutch oven, your standing desk. Point Stash at it once. From then on, whenever you save something about one of those things, a review, a tutorial, a recipe, Stash tags it with the thing itself. Everything about your Dutch oven ends up together, however long ago you saved it.</p>
         <ul class="facts">
+          <li>Any folder of Markdown notes: from Obsidian, or anywhere else</li>
+          <li>It asks before trusting a name that could mean something else, and remembers your answer</li>
           <li>Leave the folder unset and none of this appears</li>
         </ul>
       </div>
-      <div class="shot zoom"><picture><source srcset="img/mac-own-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-own-zoom.webp" width="1090" height="728" alt="Links about things you own, found with #owned: each tagged with the thing it is about" loading="lazy" data-full="img/mac-own.webp" data-full-dark="img/mac-own-dark.webp"></picture></div>
+      <div class="shot zoom"><picture><source srcset="img/mac-own-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-own-zoom.webp" width="1090" height="728" alt="Stash showing everything tagged with things you own: a Wikipedia article, a recipe and a photo tagged with the Dutch oven, and pages tagged with the standing desk" loading="lazy" data-full="img/mac-own.webp" data-full-dark="img/mac-own-dark.webp"></picture></div>
     </div>
   </div>
 </section>
@@ -308,7 +311,7 @@
       <div class="copy">
         <div class="label">Mac, iPhone and iPad</div>
         <h2>Beside your browser, and in your pocket.</h2>
-        <p>On the Mac, Stash docks to the edge of the screen and moves your browser over to make room. <span class="chord" data-chord="save"><kbd>⌃</kbd><kbd>⌘</kbd><kbd>S</kbd></span> on any page opens the save sheet with the title filled in.</p>
+        <p>On the Mac, Stash docks to the edge of the screen and moves your browser over to make room, so it&rsquo;s always right beside what you&rsquo;re reading.</p>
         <p>On iPhone and iPad it&rsquo;s the same library: share anything into Stash and it lands in the folder you pick. It stays in step through your own iCloud.</p>
         <ul class="facts">
           <li>Safari and Chrome, reading only the address and title of the tab you&rsquo;re on</li>

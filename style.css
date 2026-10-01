@@ -649,3 +649,10 @@ section.band { isolation: isolate; }
     transform: translateX(-50%); width: auto;
   }
 }
+
+/* A close-up whose bottom matters (the triage shot ends on the channel list): fade the right only. */
+.shot.zoom.fade-right img {
+  -webkit-mask-image: linear-gradient(to right, #000 80%, transparent); -webkit-mask-composite: source-over;
+          mask-image: linear-gradient(to right, #000 80%, transparent);          mask-composite: add;
+  border-radius: 16px 6px 6px 16px;
+}
