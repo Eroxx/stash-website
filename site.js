@@ -54,7 +54,9 @@ var SUPPORT_EMAIL = "support@stashlibraryapp.com";
   function show(i) {
     at = (i + shots.length) % shots.length;
     var s = shots[at];
-    img.src = s.currentSrc || s.src;
+    // A close-up opens the WHOLE window it was cut from (data-full), in the reader's light or dark.
+    var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    img.src = (dark && s.dataset.fullDark) || s.dataset.full || s.currentSrc || s.src;
     img.alt = s.alt || "";
     cap.textContent = s.alt || "";
     box.classList.add("on");
@@ -69,6 +71,14 @@ var SUPPORT_EMAIL = "support@stashlibraryapp.com";
   }
 
   shots.forEach(function (s, i) {
+    // A close-up says out loud that there is more: a visible way in, not only a zoom cursor.
+    if (s.dataset.full) {
+      var more = document.createElement("button");
+      more.type = "button"; more.className = "see-whole";
+      more.textContent = "See the whole window";
+      more.addEventListener("click", function () { open(i); });
+      s.closest(".shot").appendChild(more);
+    }
     s.classList.add("zoomable");
     s.tabIndex = 0;
     s.setAttribute("role", "button");

@@ -557,3 +557,25 @@ section.band { isolation: isolate; }
 /* Tabs: the chosen one in the accent, so the switcher reads as a control at a glance. */
 .kind-tabs button[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); box-shadow: none; }
 .basics li::before { color: var(--accent); }
+
+/* --- close-ups (scripts/zoom_shots.py) ----------------------------------------------------------
+   A detail cut from the window, shown big enough to read. The cut edges fade instead of stopping
+   hard, so it reads as "a closer look" rather than a broken screenshot; the whole window is one
+   click away. Rounded top-left, where the crop meets the app's own edge. */
+.shot.zoom { display: flex; flex-direction: column; align-items: flex-start; }
+.shot.zoom picture { display: block; width: 100%; }
+.shot.zoom img {
+  border-radius: 16px 6px 6px 6px; filter: none;
+  -webkit-mask-image: linear-gradient(to right, #000 78%, transparent), linear-gradient(to bottom, #000 80%, transparent);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to right, #000 78%, transparent), linear-gradient(to bottom, #000 80%, transparent);
+          mask-composite: intersect;
+}
+.see-whole {
+  margin-top: 6px; padding: 7px 12px; border-radius: 999px; cursor: pointer;
+  font: 600 13.5px/1 inherit; color: var(--hue, var(--accent));
+  background: color-mix(in srgb, var(--hue, var(--accent)) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--hue, var(--accent)) 30%, transparent);
+}
+.see-whole::after { content: " \2197"; }
+.see-whole:hover { background: color-mix(in srgb, var(--hue, var(--accent)) 16%, transparent); }
