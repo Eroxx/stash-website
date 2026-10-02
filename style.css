@@ -296,6 +296,11 @@ section.band.alt { background: var(--paper-2); }
 
 /* --- closing + footer --------------------------------------------------------------------------- */
 .close { text-align: center; padding: 96px 0; border-top: 1px solid var(--line); }
+/* The maker's note: one readable column, his words, no pictures. */
+.story .wrap { max-width: 680px; }
+.story p { font-size: 19px; line-height: 1.65; color: var(--ink-2); margin: 0 0 18px; }
+.story .sig { color: var(--ink); font-weight: 600; margin-top: 26px; }
+@media (max-width: 640px) { .story p { font-size: 17px; } }
 .close h2 { max-width: 20ch; margin: 0 auto 16px; }
 .close p { color: var(--ink-2); max-width: 58ch; margin: 0 auto 32px; }
 .close .pills { justify-content: center; }
