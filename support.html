@@ -87,8 +87,22 @@
       <h3>Following a YouTube channel asks for a key</h3>
       <p>Channel following uses YouTube's own Data API, which needs a key tied to an account.
         Rather than route your requests through a server of mine, Stash asks you to paste in your
-        own free key, which you can create in Google Cloud Console. Everything else about videos,
-        including saving and playing them, works without one.</p>
+        own free key. Everything else about videos, including saving and playing them, works
+        without one. Getting a key takes about five minutes:</p>
+      <ol>
+        <li>Open <a href="https://console.cloud.google.com/">Google Cloud Console</a> and sign in
+          with any Google account.</li>
+        <li>Create a project when it asks. Any name will do, such as "Stash".</li>
+        <li>Open <b>APIs &amp; Services</b>, then <b>Library</b>. Search for
+          <b>YouTube Data API v3</b> and press <b>Enable</b>.</li>
+        <li>Open <b>APIs &amp; Services</b>, then <b>Credentials</b>. Press
+          <b>Create credentials</b>, choose <b>API key</b>, and copy the key it shows.</li>
+        <li>Paste it into Stash on your Mac: <b>Settings</b>, under <b>YouTube</b>.</li>
+        <!-- When iPhone/iPad without a Mac ships: "On an iPhone or iPad used without a Mac:
+             Settings, under YouTube key." (Stash for iOS - Standalone Plan.md) -->
+      </ol>
+      <p>The key is free. Google allows it a generous number of requests each day, far more than
+        following your channels uses, and it is never charged unless you add billing yourself.</p>
     </div>
 
     <div class="qa">
