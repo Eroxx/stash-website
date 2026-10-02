@@ -130,3 +130,13 @@ var SUPPORT_EMAIL = "support@stashlibraryapp.com";
   root.classList.add("js");
   pick(0, false);
 })();
+
+/* The reel: a dark poster for a dark page, and no autoplay for anyone who asked their Mac to
+   reduce motion (they get the poster and a play button instead). */
+(function () {
+  var v = document.getElementById("reel");
+  if (!v) return;
+  var mm = window.matchMedia;
+  if (mm && mm("(prefers-color-scheme: dark)").matches && v.dataset.posterDark) v.poster = v.dataset.posterDark;
+  if (mm && mm("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.pause(); v.controls = true; }
+})();

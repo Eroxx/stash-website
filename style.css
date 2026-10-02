@@ -656,3 +656,18 @@ section.band { isolation: isolate; }
           mask-image: linear-gradient(to right, #000 80%, transparent);          mask-composite: add;
   border-radius: 16px 6px 6px 16px;
 }
+
+/* --- the reel (scripts/make_reel.py): fifteen seconds of Stash in use, right under the hero ------ */
+.reel-band { padding: 8px 0 72px; }
+.reel { margin: 0 auto; max-width: 1080px; }
+.reel video { display: block; width: 100%; height: auto; border-radius: 14px; background: var(--sand);
+  box-shadow: 0 2px 6px rgba(0,0,0,.08), 0 30px 70px var(--shot-shadow); }
+.reel figcaption { text-align: center; color: var(--muted); font-size: 15px; margin-top: 16px; }
+
+/* --- on the Mac, two ways: the docked sidebar and the full window, side by side --------------- */
+.two-ways { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: start; }
+.two-ways figure { margin: 0; }
+.two-ways img { border-radius: 10px; }
+.two-ways figcaption { margin-top: 14px; color: var(--ink-2); font-size: 16px; }
+.two-ways figcaption b { color: var(--ink); }
+@media (max-width: 760px) { .two-ways { grid-template-columns: minmax(0, 1fr); } }

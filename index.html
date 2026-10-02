@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
-<link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="style.css?v=18">
 <style>
 /* App Store badge (store.js). Apple: 40px minimum height, clear space a quarter of its height,
    never recolored or altered. */
@@ -43,6 +43,7 @@
       <a href="#channels">Channels</a>
       <a href="#prices">Prices</a>
       <a href="#keys">Keyboard</a>
+      <a href="#mac">Mac &amp; iPhone</a>
       <a href="support.html">Support</a>
       <a class="discord" data-discord href="support.html#community"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.5C.6 9.1-.3 13.6.1 18.1a19.9 19.9 0 0 0 6 3l1.3-2.1a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4a12.9 12.9 0 0 1-2.1 1l1.3 2.1a19.8 19.8 0 0 0 6-3c.5-5.2-.8-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm7.4 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg>Discord</a>
     </nav>
@@ -67,6 +68,20 @@
 </div>
 
 <main id="main">
+
+<section class="reel-band" id="watch">
+  <div class="wrap">
+    <figure class="reel">
+      <video id="reel" autoplay muted loop playsinline preload="metadata" width="1600" height="1000"
+             poster="img/reel-poster.webp" data-poster-dark="img/reel-dark-poster.webp"
+             aria-label="Stash in use: the sidebar docked beside a browser showing a Wikivoyage page about Nara; Control-Command-S opens the save sheet with the title filled in; typing jap finds Travel, Japan; Return saves it to the top of the sidebar; q adds it to the queue; Command-L opens the full Library window, then its Videos and Images tabs">
+        <source src="img/reel-dark.mp4" type="video/mp4" media="(prefers-color-scheme: dark)">
+        <source src="img/reel.mp4" type="video/mp4">
+      </video>
+      <figcaption>Save a page with one key, file it, line it up, then open the full Library. Fifteen seconds, no sound.</figcaption>
+    </figure>
+  </div>
+</section>
 
 <section class="band ways-band" id="save">
   <div class="wrap">
@@ -305,20 +320,38 @@
   </div>
 </section>
 
-<section class="band" id="phone" data-hue="phone">
+<section class="band" id="mac" data-hue="search">
+  <div class="wrap">
+    <div class="head-c">
+      <div class="label">On the Mac, two ways</div>
+      <h2>A sidebar while you browse. A full app when you sort.</h2>
+      <p>Stash docks to the edge of the screen beside your browser and moves the browser over to make room. Pin it to keep it open, or let it slide away when you&rsquo;re done; <span class="chord" data-chord="dock"><kbd>⌃</kbd><kbd>⌘</kbd><kbd>L</kbd></span> brings it back from any app. When you want room to sort, <span class="chord"><kbd>⌘</kbd><kbd>L</kbd></span> opens the same library as a full window, like any other app.</p>
+    </div>
+    <div class="two-ways">
+      <figure><div class="shot"><picture><source srcset="img/mac-docked-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-docked.webp" width="1600" height="1000" alt="Stash docked as a sidebar at the left edge of the screen, beside a browser showing a Wikivoyage page; the page just saved sits at the top of the sidebar" loading="lazy"></picture></div>
+        <figcaption><b>Docked beside your browser.</b> Save, find and open things without leaving the page you&rsquo;re on.</figcaption></figure>
+      <figure><div class="shot"><picture><source srcset="img/mac-library-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-library.webp" width="2360" height="1616" alt="The Stash Library window: folders and views on the left, saved pages, videos and pictures on the right" loading="lazy"></picture></div>
+        <figcaption><b>Or as a full window.</b> Room to sort, tag, archive and work through your queue.</figcaption></figure>
+    </div>
+    <ul class="basics" aria-label="On the Mac">
+      <li>Works with Safari and Chrome, reading only the address and title of the tab you&rsquo;re on</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band alt" id="phone" data-hue="phone">
   <div class="wrap">
     <div class="row">
       <div class="copy">
-        <div class="label">Mac, iPhone and iPad</div>
-        <h2>Beside your browser, and in your pocket.</h2>
-        <p>On the Mac, Stash docks to the edge of the screen and moves your browser over to make room, so it&rsquo;s always right beside what you&rsquo;re reading.</p>
-        <p>On iPhone and iPad it&rsquo;s the same library: share anything into Stash and it lands in the folder you pick. It stays in step through your own iCloud.</p>
+        <div class="label">iPhone and iPad</div>
+        <h2>Your library in your pocket, too.</h2>
+        <p>On iPhone and iPad, Stash works alongside Stash on your Mac: the same library, kept in step through your own iCloud. Share anything into it from Safari, YouTube or any app, and it lands in the folder you pick.</p>
         <ul class="facts">
-          <li>Safari and Chrome, reading only the address and title of the tab you&rsquo;re on</li>
+          <li>The same folders, tags, queue and shopping lists you set up on the Mac</li>
+          <li>iPad gets a layout of its own, not a stretched phone</li>
         </ul>
       </div>
-      <div class="shot trio">
-        <picture><source srcset="img/mac-save-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-save.webp" width="720" height="1320" alt="The Stash save sheet: the page title already filled in, finding a folder as you type" loading="lazy"></picture>
+      <div class="shot phones">
         <picture><source srcset="img/iphone-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/iphone.webp" width="1350" height="2760" alt="Stash on iPhone: the same library" loading="lazy"></picture>
         <picture><source srcset="img/iphone-shop-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/iphone-shop.webp" width="1350" height="2760" alt="Stash on iPhone: a shopping list with prices" loading="lazy"></picture>
       </div>
@@ -354,7 +387,7 @@
   </div>
 </footer>
 
-<script src="site.js?v=6" defer></script>
+<script src="site.js?v=7" defer></script>
 <script src="store.js" defer></script>
 </body>
 </html>
