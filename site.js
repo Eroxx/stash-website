@@ -56,7 +56,7 @@ var SUPPORT_EMAIL = "support@stashlibraryapp.com";
     var s = shots[at];
     // A close-up opens the WHOLE window it was cut from (data-full), in the reader's light or dark.
     var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    img.src = (dark && s.dataset.fullDark) || s.dataset.full || s.currentSrc || s.src;
+    img.src = (dark && s.dataset.fullDark) || s.dataset.full || (s.currentSrc || s.src).replace(/small\/(.+)-\d+\.webp(\?.*)?$/, "$1." + (s.dataset.ext || "webp"));
     img.alt = s.alt || "";
     cap.textContent = s.alt || "";
     box.classList.add("on");
@@ -137,6 +137,18 @@ var SUPPORT_EMAIL = "support@stashlibraryapp.com";
   var v = document.getElementById("reel");
   if (!v) return;
   var mm = window.matchMedia;
-  if (mm && mm("(prefers-color-scheme: dark)").matches && v.dataset.posterDark) v.poster = v.dataset.posterDark;
-  if (mm && mm("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.pause(); v.controls = true; }
+  var still = mm && mm("(prefers-reduced-motion: reduce)").matches;
+  if (still) { v.removeAttribute("autoplay"); v.controls = true; }
+  // The poster loads as the reel comes near, the film once it is on screen.
+  var poster = function () { v.poster = (mm && mm("(prefers-color-scheme: dark)").matches && v.dataset.posterDark) || v.dataset.poster; };
+  var start = function () {
+    v.querySelectorAll("source").forEach(function (s) { s.src = s.dataset.src; });
+    v.load();
+    if (!still) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  };
+  if (!("IntersectionObserver" in window)) { poster(); return start(); }
+  var near = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { near.disconnect(); poster(); } }, { rootMargin: "400px 0px" });
+  near.observe(v);
+  var seen = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { seen.disconnect(); start(); } }, { threshold: 0.25 });
+  seen.observe(v);
 })();

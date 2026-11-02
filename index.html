@@ -16,8 +16,9 @@
 <title>Stash Library</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"></noscript>
+<link rel="stylesheet" href="style.css?v=19">
 <style>
 /* App Store badge (store.js). Apple: 40px minimum height, clear space a quarter of its height,
    never recolored or altered. */
@@ -33,7 +34,7 @@
 <div class="wrap">
   <header class="top">
     <a class="brand" href="#top" aria-label="Stash Library, back to the top">
-      <img class="brand-mark" src="img/icon.png" width="28" height="28" alt=""><span>Stash</span>
+      <img data-ext="png" decoding="async" class="brand-mark" src="img/small/icon-128.webp" srcset="img/small/icon-128.webp 128w" sizes="(max-width: 500px) 7vw, (max-width: 1000px) 4vw, 28px" width="28" height="28" alt=""><span>Stash</span>
     </a>
     <nav class="nav" aria-label="Sections">
       <a href="#save">Saving</a>
@@ -61,8 +62,8 @@
       </div>
     </div>
     <div class="hero-art">
-      <picture><source srcset="img/mac-library-dark.webp" media="(prefers-color-scheme: dark)"><img class="mac" src="img/mac-library.webp" width="2360" height="1616" alt="Stash on the Mac: folders and saved views down the left, saved pages, videos and pictures on the right, each with its site, its folder, its tags and, on a shopping item, its price"></picture>
-      <picture><source srcset="img/iphone-dark.webp" media="(prefers-color-scheme: dark)"><img class="phone" src="img/iphone.webp" width="1350" height="2760" alt="Stash on iPhone showing the same saved links"></picture>
+      <picture><source srcset="img/small/mac-library-dark-480.webp 480w, img/small/mac-library-dark-800.webp 800w, img/small/mac-library-dark-1200.webp 1200w, img/small/mac-library-dark-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 542px" media="(prefers-color-scheme: dark)"><img decoding="async" fetchpriority="high" class="mac" src="img/small/mac-library-800.webp" srcset="img/small/mac-library-480.webp 480w, img/small/mac-library-800.webp 800w, img/small/mac-library-1200.webp 1200w, img/small/mac-library-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 542px" width="2360" height="1616" alt="Stash on the Mac: folders and saved views down the left, saved pages, videos and pictures on the right, each with its site, its folder, its tags and, on a shopping item, its price"></picture>
+      <picture><source srcset="img/small/iphone-dark-480.webp 480w, img/small/iphone-dark-800.webp 800w" sizes="(max-width: 500px) 42vw, (max-width: 1000px) 35vw, 265px" media="(prefers-color-scheme: dark)"><img decoding="async" class="phone" src="img/small/iphone-800.webp" srcset="img/small/iphone-480.webp 480w, img/small/iphone-800.webp 800w" sizes="(max-width: 500px) 42vw, (max-width: 1000px) 35vw, 265px" width="1350" height="2760" alt="Stash on iPhone showing the same saved links"></picture>
     </div>
   </section>
 </div>
@@ -72,11 +73,11 @@
 <section class="reel-band" id="watch">
   <div class="wrap">
     <figure class="reel">
-      <video id="reel" autoplay muted loop playsinline preload="metadata" width="1600" height="1000"
-             poster="img/reel-poster.webp" data-poster-dark="img/reel-dark-poster.webp"
+      <video id="reel" autoplay muted loop playsinline preload="none" width="1600" height="1000"
+             data-poster="img/reel-poster.webp" data-poster-dark="img/reel-dark-poster.webp"
              aria-label="Stash in use: a Wikivoyage page about Nara fills the screen; Control-Command-L brings in the Stash sidebar and the browser moves over to make room; a click pins the sidebar open; Control-Command-S opens the save sheet with the title filled in; typing jap finds Travel, Japan; Return saves it to the top of the sidebar; q adds it to the queue; Command-L opens the full Library window, then its Videos and Images tabs">
-        <source src="img/reel-dark.mp4" type="video/mp4" media="(prefers-color-scheme: dark)">
-        <source src="img/reel.mp4" type="video/mp4">
+        <source data-src="img/reel-dark.mp4" type="video/mp4" media="(prefers-color-scheme: dark)">
+        <source data-src="img/reel.mp4" type="video/mp4">
       </video>
       <figcaption>Bring up the sidebar and pin it, save a page with one key, line it up, then open the full Library. Twenty seconds, no sound.</figcaption>
     </figure>
@@ -116,15 +117,15 @@
       </div>
       <figure class="kind-panel" role="tabpanel" id="kp-web" aria-labelledby="kt-web">
         <figcaption>Every page with its site, folder and tags, and on a shopping list, its price.</figcaption>
-        <div class="shot"><picture><source srcset="img/mac-web-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-web.webp" width="2360" height="1616" alt="The Web tab in Stash: saved pages with their site, folder, tags and, for shopping items, the price and whether it dropped"></picture></div>
+        <div class="shot"><picture><source srcset="img/small/mac-web-dark-480.webp 480w, img/small/mac-web-dark-800.webp 800w, img/small/mac-web-dark-1200.webp 1200w, img/small/mac-web-dark-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 1000px" media="(prefers-color-scheme: dark)"><img decoding="async" loading="lazy" src="img/small/mac-web-800.webp" srcset="img/small/mac-web-480.webp 480w, img/small/mac-web-800.webp 800w, img/small/mac-web-1200.webp 1200w, img/small/mac-web-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 1000px" width="2360" height="1616" alt="The Web tab in Stash: saved pages with their site, folder, tags and, for shopping items, the price and whether it dropped"></picture></div>
       </figure>
       <figure class="kind-panel" role="tabpanel" id="kp-vid" aria-labelledby="kt-vid">
         <figcaption>Every video with its thumbnail and length. They play right inside Stash and pick up where you stopped, to the second.</figcaption>
-        <div class="shot"><picture><source srcset="img/mac-vidtab-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-vidtab.webp" width="2360" height="1616" alt="The Videos tab in Stash: every saved video with its thumbnail, length and how far you got, and nothing that is not a video"></picture></div>
+        <div class="shot"><picture><source srcset="img/small/mac-vidtab-dark-480.webp 480w, img/small/mac-vidtab-dark-800.webp 800w, img/small/mac-vidtab-dark-1200.webp 1200w, img/small/mac-vidtab-dark-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 1000px" media="(prefers-color-scheme: dark)"><img decoding="async" loading="lazy" src="img/small/mac-vidtab-800.webp" srcset="img/small/mac-vidtab-480.webp 480w, img/small/mac-vidtab-800.webp 800w, img/small/mac-vidtab-1200.webp 1200w, img/small/mac-vidtab-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 1000px" width="2360" height="1616" alt="The Videos tab in Stash: every saved video with its thumbnail, length and how far you got, and nothing that is not a video"></picture></div>
       </figure>
       <figure class="kind-panel" role="tabpanel" id="kp-img" aria-labelledby="kt-img">
         <figcaption>Pictures and screen clips as a contact sheet, in the same folders and tags as everything else.</figcaption>
-        <div class="shot"><picture><source srcset="img/mac-images-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-images.webp" width="2360" height="1616" alt="The Images tab in Stash: a contact sheet of saved pictures, each with its folder"></picture></div>
+        <div class="shot"><picture><source srcset="img/small/mac-images-dark-480.webp 480w, img/small/mac-images-dark-800.webp 800w, img/small/mac-images-dark-1200.webp 1200w, img/small/mac-images-dark-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 1000px" media="(prefers-color-scheme: dark)"><img decoding="async" loading="lazy" src="img/small/mac-images-800.webp" srcset="img/small/mac-images-480.webp 480w, img/small/mac-images-800.webp 800w, img/small/mac-images-1200.webp 1200w, img/small/mac-images-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 1000px" width="2360" height="1616" alt="The Images tab in Stash: a contact sheet of saved pictures, each with its folder"></picture></div>
       </figure>
     </div>
     <ul class="basics" aria-label="The basics, all there">
@@ -147,13 +148,13 @@
   </div>
   <ol class="life wrap" aria-label="One saved page on its way through Stash">
     <li class="h-save"><em>1</em><b>Save it</b><span>Found something worth keeping? Save it in a moment and pick a folder.</span>
-      <div class="mini-card " aria-hidden="true"><i class="mc-dot" aria-hidden="true"></i><img src="img/fav-wikivoyage.png" width="20" height="20" alt=""><div><b>Kyoto travel guide</b><small>en.wikivoyage.org</small><div class="mc-chips"><span class="mc-folder">⛩️ Travel › Japan</span></div></div></div></li>
+      <div class="mini-card " aria-hidden="true"><i class="mc-dot" aria-hidden="true"></i><img decoding="async" loading="lazy" src="img/fav-wikivoyage.png" width="20" height="20" alt=""><div><b>Kyoto travel guide</b><small>en.wikivoyage.org</small><div class="mc-chips"><span class="mc-folder">⛩️ Travel › Japan</span></div></div></div></li>
     <li class="h-queue"><em>2</em><b>Line it up</b><span>Add it to your queue: a short list of what you&rsquo;ll read or watch next.</span>
-      <div class="mini-card " aria-hidden="true"><i class="mc-dot" aria-hidden="true"></i><img src="img/fav-wikivoyage.png" width="20" height="20" alt=""><div><b>Kyoto travel guide</b><small>en.wikivoyage.org</small><div class="mc-chips"><span class="mc-folder">⛩️ Travel › Japan</span><span class="mc-pill q">In queue · #2</span></div></div></div></li>
+      <div class="mini-card " aria-hidden="true"><i class="mc-dot" aria-hidden="true"></i><img decoding="async" loading="lazy" src="img/fav-wikivoyage.png" width="20" height="20" alt=""><div><b>Kyoto travel guide</b><small>en.wikivoyage.org</small><div class="mc-chips"><span class="mc-folder">⛩️ Travel › Japan</span><span class="mc-pill q">In queue · #2</span></div></div></div></li>
     <li class="h-seen"><em>3</em><b>Open it</b><span>Stash notices you&rsquo;ve read it. The blue &ldquo;new&rdquo; dot goes, so what you haven&rsquo;t opened stands out.</span>
-      <div class="mini-card " aria-hidden="true"><i class="mc-dot off" aria-hidden="true"></i><img src="img/fav-wikivoyage.png" width="20" height="20" alt=""><div><b>Kyoto travel guide</b><small>en.wikivoyage.org</small><div class="mc-chips"><span class="mc-folder">⛩️ Travel › Japan</span><span class="mc-pill">Seen</span></div></div></div></li>
+      <div class="mini-card " aria-hidden="true"><i class="mc-dot off" aria-hidden="true"></i><img decoding="async" loading="lazy" src="img/fav-wikivoyage.png" width="20" height="20" alt=""><div><b>Kyoto travel guide</b><small>en.wikivoyage.org</small><div class="mc-chips"><span class="mc-folder">⛩️ Travel › Japan</span><span class="mc-pill">Seen</span></div></div></div></li>
     <li class="h-archive"><em>4</em><b>Put it away</b><span>Finished? Archive it. It&rsquo;s out of your way, but never deleted: search still finds it.</span>
-      <div class="mini-card arch" aria-hidden="true"><i class="mc-dot off" aria-hidden="true"></i><img src="img/fav-wikivoyage.png" width="20" height="20" alt=""><div><b>Kyoto travel guide</b><small>en.wikivoyage.org</small><div class="mc-chips"><span class="mc-folder">⛩️ Travel › Japan</span><span class="mc-pill">Archived</span></div></div></div></li>
+      <div class="mini-card arch" aria-hidden="true"><i class="mc-dot off" aria-hidden="true"></i><img decoding="async" loading="lazy" src="img/fav-wikivoyage.png" width="20" height="20" alt=""><div><b>Kyoto travel guide</b><small>en.wikivoyage.org</small><div class="mc-chips"><span class="mc-folder">⛩️ Travel › Japan</span><span class="mc-pill">Archived</span></div></div></div></li>
   </ol>
 </section>
 
@@ -172,7 +173,7 @@
           <li>The Videos and Web tabs narrow it to just watching or just reading</li>
         </ul>
       </div>
-      <div class="shot zoom"><picture><source srcset="img/mac-videos-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-videos-zoom.webp" width="1890" height="940" alt="The Queue in Stash: articles and videos together in one numbered list, each with its own buttons to move it up, move it down or take it off" loading="lazy" data-full="img/mac-videos.webp" data-full-dark="img/mac-videos-dark.webp"></picture></div>
+      <div class="shot zoom"><picture><source srcset="img/small/mac-videos-zoom-dark-480.webp 480w, img/small/mac-videos-zoom-dark-800.webp 800w, img/small/mac-videos-zoom-dark-1200.webp 1200w, img/small/mac-videos-zoom-dark-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 576px" media="(prefers-color-scheme: dark)"><img decoding="async" src="img/small/mac-videos-zoom-800.webp" srcset="img/small/mac-videos-zoom-480.webp 480w, img/small/mac-videos-zoom-800.webp 800w, img/small/mac-videos-zoom-1200.webp 1200w, img/small/mac-videos-zoom-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 576px" width="1890" height="940" alt="The Queue in Stash: articles and videos together in one numbered list, each with its own buttons to move it up, move it down or take it off" loading="lazy" data-full="img/mac-videos.webp" data-full-dark="img/mac-videos-dark.webp"></picture></div>
     </div>
   </div>
 </section>
@@ -190,7 +191,7 @@
           <li>Archive a whole selection at once, or a new video straight from triage</li>
         </ul>
       </div>
-      <div class="shot zoom"><picture><source srcset="img/mac-archive-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-archive-zoom.webp" width="1030" height="828" alt="A Read Later folder in Stash: one unread link at the top, and three finished ones dimmed and folded under Archived" loading="lazy" data-full="img/mac-archive.webp" data-full-dark="img/mac-archive-dark.webp"></picture></div>
+      <div class="shot zoom"><picture><source srcset="img/mac-archive-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img decoding="async" src="img/mac-archive-zoom.webp" width="1030" height="828" alt="A Read Later folder in Stash: one unread link at the top, and three finished ones dimmed and folded under Archived" loading="lazy" data-full="img/mac-archive.webp" data-full-dark="img/mac-archive-dark.webp"></picture></div>
     </div>
   </div>
 </section>
@@ -208,7 +209,7 @@
           <li>Uses a free YouTube key that you set up once. <a href="support.html#youtube-key">Here&rsquo;s how</a></li>
         </ul>
       </div>
-      <div class="shot zoom fade-right"><picture><source srcset="img/mac-triage-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-triage-zoom.webp" width="1420" height="1170" alt="Videos to Triage in Stash: the sidebar lists the two followed channels, each with 3 new videos, and the list beside it shows the new uploads waiting to be kept or skipped" loading="lazy" data-full="img/mac-triage.webp" data-full-dark="img/mac-triage-dark.webp"></picture></div>
+      <div class="shot zoom fade-right"><picture><source srcset="img/small/mac-triage-zoom-dark-480.webp 480w, img/small/mac-triage-zoom-dark-800.webp 800w, img/small/mac-triage-zoom-dark-1200.webp 1200w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 576px" media="(prefers-color-scheme: dark)"><img decoding="async" src="img/small/mac-triage-zoom-800.webp" srcset="img/small/mac-triage-zoom-480.webp 480w, img/small/mac-triage-zoom-800.webp 800w, img/small/mac-triage-zoom-1200.webp 1200w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 576px" width="1420" height="1170" alt="Videos to Triage in Stash: the sidebar lists the two followed channels, each with 3 new videos, and the list beside it shows the new uploads waiting to be kept or skipped" loading="lazy" data-full="img/mac-triage.webp" data-full-dark="img/mac-triage-dark.webp"></picture></div>
     </div>
   </div>
 </section>
@@ -226,7 +227,7 @@
           <li>No shopping folder, no prices: you&rsquo;ll never see any of it</li>
         </ul>
       </div>
-      <div class="shot zoom"><picture><source srcset="img/mac-shopping-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-shopping-zoom.webp" width="1190" height="810" alt="A shopping list in Stash: prices, drops shown beside the old price, and a countdown on deals that end" loading="lazy" data-full="img/mac-shopping.webp" data-full-dark="img/mac-shopping-dark.webp"></picture></div>
+      <div class="shot zoom"><picture><source srcset="img/small/mac-shopping-zoom-dark-480.webp 480w, img/small/mac-shopping-zoom-dark-800.webp 800w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 472px" media="(prefers-color-scheme: dark)"><img decoding="async" src="img/small/mac-shopping-zoom-800.webp" srcset="img/small/mac-shopping-zoom-480.webp 480w, img/small/mac-shopping-zoom-800.webp 800w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 472px" width="1190" height="810" alt="A shopping list in Stash: prices, drops shown beside the old price, and a countdown on deals that end" loading="lazy" data-full="img/mac-shopping.webp" data-full-dark="img/mac-shopping-dark.webp"></picture></div>
     </div>
   </div>
 </section>
@@ -271,7 +272,7 @@
           <li>Leave the folder unset and none of this appears</li>
         </ul>
       </div>
-      <div class="shot zoom"><picture><source srcset="img/mac-own-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-own-zoom.webp" width="1090" height="728" alt="Stash showing everything tagged with things you own: a Wikipedia article, a recipe and a photo tagged with the Dutch oven, and pages tagged with the standing desk" loading="lazy" data-full="img/mac-own.webp" data-full-dark="img/mac-own-dark.webp"></picture></div>
+      <div class="shot zoom"><picture><source srcset="img/small/mac-own-zoom-dark-480.webp 480w, img/small/mac-own-zoom-dark-800.webp 800w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 472px" media="(prefers-color-scheme: dark)"><img decoding="async" src="img/small/mac-own-zoom-800.webp" srcset="img/small/mac-own-zoom-480.webp 480w, img/small/mac-own-zoom-800.webp 800w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 472px" width="1090" height="728" alt="Stash showing everything tagged with things you own: a Wikipedia article, a recipe and a photo tagged with the Dutch oven, and pages tagged with the standing desk" loading="lazy" data-full="img/mac-own.webp" data-full-dark="img/mac-own-dark.webp"></picture></div>
     </div>
   </div>
 </section>
@@ -306,7 +307,7 @@
         <h2>Every action has a key.</h2>
         <p><span data-keytotal>81</span> of them, and you never have to learn one: press <kbd>?</kbd> for the list, or <span class="chord"><kbd>⌘</kbd><kbd>K</kbd></span> and type what you want done. The ones that work from anywhere on your Mac are yours to change.</p>
       </div>
-      <div class="shot zoom"><picture><source srcset="img/mac-palette-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-palette-zoom.webp" width="1080" height="1120" alt="The command palette in Stash, opened with Command-K over a selected link, listing what you can do to it and the key for each" loading="lazy" data-full="img/mac-palette.webp" data-full-dark="img/mac-palette-dark.webp"></picture></div>
+      <div class="shot zoom"><picture><source srcset="img/mac-palette-zoom-dark.webp" media="(prefers-color-scheme: dark)"><img decoding="async" src="img/mac-palette-zoom.webp" width="1080" height="1120" alt="The command palette in Stash, opened with Command-K over a selected link, listing what you can do to it and the key for each" loading="lazy" data-full="img/mac-palette.webp" data-full-dark="img/mac-palette-dark.webp"></picture></div>
     </div>
     <!-- KEYS:start (generated by scripts/site_keys.py — edit that, not this) -->
 <div class="keys-grid" data-keycount="81">
@@ -327,9 +328,9 @@
       <p>Stash docks to the edge of the screen beside your browser and moves the browser over to make room. Pin it to keep it open, or let it slide away when you&rsquo;re done; <span class="chord" data-chord="dock"><kbd>⌃</kbd><kbd>⌘</kbd><kbd>L</kbd></span> brings it back from any app. When you want room to sort, <span class="chord"><kbd>⌘</kbd><kbd>L</kbd></span> opens the same library as a full window, like any other app.</p>
     </div>
     <div class="two-ways">
-      <figure><div class="shot"><picture><source srcset="img/mac-docked-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-docked.webp" width="1600" height="1000" alt="Stash docked as a sidebar at the left edge of the screen, beside a browser showing a Wikivoyage page; the page just saved sits at the top of the sidebar" loading="lazy"></picture></div>
+      <figure><div class="shot"><picture><source srcset="img/small/mac-docked-dark-480.webp 480w, img/small/mac-docked-dark-800.webp 800w, img/small/mac-docked-dark-1200.webp 1200w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 45vw, 542px" media="(prefers-color-scheme: dark)"><img decoding="async" src="img/small/mac-docked-800.webp" srcset="img/small/mac-docked-480.webp 480w, img/small/mac-docked-800.webp 800w, img/small/mac-docked-1200.webp 1200w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 45vw, 542px" width="1600" height="1000" alt="Stash docked as a sidebar at the left edge of the screen, beside a browser showing a Wikivoyage page; the page just saved sits at the top of the sidebar" loading="lazy"></picture></div>
         <figcaption><b>Docked beside your browser.</b> Save, find and open things without leaving the page you&rsquo;re on.</figcaption></figure>
-      <figure><div class="shot"><picture><source srcset="img/mac-library-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/mac-library.webp" width="2360" height="1616" alt="The Stash Library window: folders and views on the left, saved pages, videos and pictures on the right" loading="lazy"></picture></div>
+      <figure><div class="shot"><picture><source srcset="img/small/mac-library-dark-480.webp 480w, img/small/mac-library-dark-800.webp 800w, img/small/mac-library-dark-1200.webp 1200w, img/small/mac-library-dark-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 542px" media="(prefers-color-scheme: dark)"><img decoding="async" src="img/small/mac-library-800.webp" srcset="img/small/mac-library-480.webp 480w, img/small/mac-library-800.webp 800w, img/small/mac-library-1200.webp 1200w, img/small/mac-library-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 542px" width="2360" height="1616" alt="The Stash Library window: folders and views on the left, saved pages, videos and pictures on the right" loading="lazy"></picture></div>
         <figcaption><b>Or as a full window.</b> Room to sort, tag, archive and work through your queue.</figcaption></figure>
     </div>
     <ul class="basics" aria-label="On the Mac">
@@ -352,11 +353,11 @@
         </ul>
       </div>
       <div class="shot phones">
-        <picture><source srcset="img/iphone-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/iphone.webp" width="1350" height="2760" alt="Stash on iPhone: the same library" loading="lazy"></picture>
-        <picture><source srcset="img/iphone-shop-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/iphone-shop.webp" width="1350" height="2760" alt="Stash on iPhone: a shopping list with prices" loading="lazy"></picture>
+        <picture><source srcset="img/small/iphone-dark-480.webp 480w, img/small/iphone-dark-800.webp 800w" sizes="(max-width: 500px) 42vw, (max-width: 1000px) 35vw, 265px" media="(prefers-color-scheme: dark)"><img decoding="async" src="img/small/iphone-800.webp" srcset="img/small/iphone-480.webp 480w, img/small/iphone-800.webp 800w" sizes="(max-width: 500px) 42vw, (max-width: 1000px) 35vw, 265px" width="1350" height="2760" alt="Stash on iPhone: the same library" loading="lazy"></picture>
+        <picture><source srcset="img/small/iphone-shop-dark-480.webp 480w, img/small/iphone-shop-dark-800.webp 800w" sizes="(max-width: 500px) 42vw, (max-width: 1000px) 35vw, 265px" media="(prefers-color-scheme: dark)"><img decoding="async" src="img/small/iphone-shop-800.webp" srcset="img/small/iphone-shop-480.webp 480w, img/small/iphone-shop-800.webp 800w" sizes="(max-width: 500px) 42vw, (max-width: 1000px) 35vw, 265px" width="1350" height="2760" alt="Stash on iPhone: a shopping list with prices" loading="lazy"></picture>
       </div>
     </div>
-    <div class="shot pad"><picture><source srcset="img/ipad-dark.webp" media="(prefers-color-scheme: dark)"><img src="img/ipad.webp" width="2630" height="1908" alt="Stash on iPad, with a layout of its own: folders, the list and the details side by side" loading="lazy"></picture></div>
+    <div class="shot pad"><picture><source srcset="img/small/ipad-dark-480.webp 480w, img/small/ipad-dark-800.webp 800w, img/small/ipad-dark-1200.webp 1200w, img/small/ipad-dark-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 1000px" media="(prefers-color-scheme: dark)"><img decoding="async" src="img/small/ipad-800.webp" srcset="img/small/ipad-480.webp 480w, img/small/ipad-800.webp 800w, img/small/ipad-1200.webp 1200w, img/small/ipad-1600.webp 1600w" sizes="(max-width: 500px) 92vw, (max-width: 1000px) 94vw, 1000px" width="2630" height="1908" alt="Stash on iPad, with a layout of its own: folders, the list and the details side by side" loading="lazy"></picture></div>
   </div>
 </section>
 
@@ -398,7 +399,7 @@
   </div>
 </footer>
 
-<script src="site.js?v=7" defer></script>
+<script src="site.js?v=8" defer></script>
 <script src="store.js" defer></script>
 </body>
 </html>
